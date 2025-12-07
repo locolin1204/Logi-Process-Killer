@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-
+import UserNotifications
 
 class ApplicationMenu: NSObject {
     
@@ -55,8 +55,51 @@ class ApplicationMenu: NSObject {
         
         task.standardOutput = pipe
         task.standardError = pipe
-        task.launch()
+        
+        do {
+            try task.run()
+        } catch {
+            print("Failed to launch task: \(error)")
+            showNotification(title: "System Error", body: "Could not launch the kill command.")
+            return
+        }
+        
         task.waitUntilExit()
+        
+        // Check termination status
+        // 0 = Success (Process found and killed)
+        // 1 = Failure (Usually means 'No matching processes belonging to you were found')
+        
+        let applicationName = "Logi Options Daemon"
+        if task.terminationStatus == 0 {
+            showNotification(title: "Success", body: "\(applicationName) terminated.")
+        } else {
+            showNotification(title: "Process Not Found", body: "\(applicationName) is not running or already terminated.")
+        }
+    }
+    
+    private func showNotification(title: String, body: String) {
+        let center = UNUserNotificationCenter.current()
+        
+        center.requestAuthorization(options: [.alert, .sound]) { granted, error in
+            if granted {
+                let content = UNMutableNotificationContent()
+                content.title = title
+                content.body = body
+                content.sound = UNNotificationSound.default
+                
+                // UUID ensures every notification is treated as a new event
+                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
+                
+                center.add(request) { error in
+                    if let error = error {
+                        print("Error showing notification: \(error.localizedDescription)")
+                    }
+                }
+            } else if let error = error {
+                print("Notification permission error: \(error.localizedDescription)")
+            }
+        }
     }
     
     @objc func about(sender: NSMenuItem) {
