@@ -8,18 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		AE558F682EE1FB5C007CC05E /* Logi_Process_KillerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE558F672EE1FB5C007CC05E /* Logi_Process_KillerApp.swift */; };
-		AE558F6A2EE1FB5C007CC05E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE558F692EE1FB5C007CC05E /* ContentView.swift */; };
 		AE558F6C2EE1FB5D007CC05E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE558F6B2EE1FB5D007CC05E /* Assets.xcassets */; };
 		AE558F6F2EE1FB5D007CC05E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE558F6E2EE1FB5D007CC05E /* Preview Assets.xcassets */; };
+		AEB83AA72EE442E400DC5105 /* ApplicationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB83AA62EE442E400DC5105 /* ApplicationMenu.swift */; };
+		AEB83AAA2EE4A3E700DC5105 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AEB83AA92EE4A3E700DC5105 /* Credits.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AE558F642EE1FB5C007CC05E /* Logi Process Killer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Logi Process Killer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE558F672EE1FB5C007CC05E /* Logi_Process_KillerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logi_Process_KillerApp.swift; sourceTree = "<group>"; };
-		AE558F692EE1FB5C007CC05E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AE558F6B2EE1FB5D007CC05E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE558F6E2EE1FB5D007CC05E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AE558F702EE1FB5D007CC05E /* Logi_Process_Killer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Logi_Process_Killer.entitlements; sourceTree = "<group>"; };
+		AEB83AA62EE442E400DC5105 /* ApplicationMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationMenu.swift; sourceTree = "<group>"; };
+		AEB83AA82EE49BF200DC5105 /* Logi-Process-Killer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Logi-Process-Killer-Info.plist"; sourceTree = SOURCE_ROOT; };
+		AEB83AA92EE4A3E700DC5105 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +55,10 @@
 		AE558F662EE1FB5C007CC05E /* Logi Process Killer */ = {
 			isa = PBXGroup;
 			children = (
+				AEB83AA82EE49BF200DC5105 /* Logi-Process-Killer-Info.plist */,
 				AE558F672EE1FB5C007CC05E /* Logi_Process_KillerApp.swift */,
-				AE558F692EE1FB5C007CC05E /* ContentView.swift */,
+				AEB83AA62EE442E400DC5105 /* ApplicationMenu.swift */,
+				AEB83AA92EE4A3E700DC5105 /* Credits.rtf */,
 				AE558F6B2EE1FB5D007CC05E /* Assets.xcassets */,
 				AE558F702EE1FB5D007CC05E /* Logi_Process_Killer.entitlements */,
 				AE558F6D2EE1FB5D007CC05E /* Preview Content */,
@@ -128,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE558F6F2EE1FB5D007CC05E /* Preview Assets.xcassets in Resources */,
+				AEB83AAA2EE4A3E700DC5105 /* Credits.rtf in Resources */,
 				AE558F6C2EE1FB5D007CC05E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,7 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE558F6A2EE1FB5C007CC05E /* ContentView.swift in Sources */,
+				AEB83AA72EE442E400DC5105 /* ApplicationMenu.swift in Sources */,
 				AE558F682EE1FB5C007CC05E /* Logi_Process_KillerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +278,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Logi Process Killer/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Logi-Process-Killer-Info.plist";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -297,6 +305,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Logi Process Killer/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Logi-Process-Killer-Info.plist";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
