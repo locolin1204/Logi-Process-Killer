@@ -1,5 +1,9 @@
 # Logi Process Killer
 
+<p align="center">
+  <img src="./Logi Process Killer/Assets.xcassets/AppIcon.appiconset/icon-mac-512x512@2x.png" alt="Description of image" width="75">
+</p>
+
 ## Motivation
 
 Everytime when I switch my MX master from my work laptop to my MacBook, or when I wake my MacBook from sleep mode, somehow the mapped keys are not working anymore.
@@ -12,6 +16,13 @@ As a developer, why don't make it easier? Place a button where I can always acce
 
 Just 1 click to kill.
 
+Automate it whenever possible, otherwise, time is wasted.
+
 ## Implementation
 
 I created a menu bar application so that it can be accessed easily.
+
+<p align="center">
+  <img src="./images/menubar-screenshot.png" alt="Description of image" width="500">
+</p>
+It got 1 simple function: to kill the process, a notification will appear to inform the user whether the process has successfully killed or not
