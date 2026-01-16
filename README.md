@@ -38,7 +38,8 @@ I created a menu bar application so that it can be accessed and kill the `Logi O
 
 This Logi Process Killer is to kill the Daemon of `Logi Options`
 
-> [`Logi Options`](https://www.logitech.com/en-hk/software/options.html) a powerful and easy-to-use application that enhances your Logitech mice, keyboards, and touchpads. Customize your device with Options to achieve more, faster. <p align="center"> > <img src="./images/logi-options-logo.png" alt="Description of image" width="50">
+> [`Logi Options`](https://www.logitech.com/en-hk/software/options.html) a powerful and easy-to-use application that enhances your Logitech mice, keyboards, and touchpads. Customize your device with Options to achieve more, faster. <p align="center">
+> <img src="./images/logi-options-logo.png" alt="Description of image" width="50">
 
 </p>
 
