@@ -10,6 +10,7 @@
 		AE558F682EE1FB5C007CC05E /* Logi_Process_KillerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE558F672EE1FB5C007CC05E /* Logi_Process_KillerApp.swift */; };
 		AE558F6C2EE1FB5D007CC05E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE558F6B2EE1FB5D007CC05E /* Assets.xcassets */; };
 		AE558F6F2EE1FB5D007CC05E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE558F6E2EE1FB5D007CC05E /* Preview Assets.xcassets */; };
+		AE8808CA2F1A200600521C31 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = AE8808C92F1A200600521C31 /* LaunchAtLogin */; };
 		AE89D3632EE6027100524520 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AE89D3622EE6027100524520 /* README.md */; };
 		AEB83AA72EE442E400DC5105 /* ApplicationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB83AA62EE442E400DC5105 /* ApplicationMenu.swift */; };
 		AEB83AAA2EE4A3E700DC5105 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AEB83AA92EE4A3E700DC5105 /* Credits.rtf */; };
@@ -32,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE8808CA2F1A200600521C31 /* LaunchAtLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,12 +89,16 @@
 				AE558F602EE1FB5C007CC05E /* Sources */,
 				AE558F612EE1FB5C007CC05E /* Frameworks */,
 				AE558F622EE1FB5C007CC05E /* Resources */,
+				AE8808CB2F1A21AD00521C31 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Logi Process Killer";
+			packageProductDependencies = (
+				AE8808C92F1A200600521C31 /* LaunchAtLogin */,
+			);
 			productName = "Logi Process Killer";
 			productReference = AE558F642EE1FB5C007CC05E /* Logi Process Killer.app */;
 			productType = "com.apple.product-type.application";
@@ -121,6 +127,9 @@
 				Base,
 			);
 			mainGroup = AE558F5B2EE1FB5C007CC05E;
+			packageReferences = (
+				AE8808C82F1A200600521C31 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */,
+			);
 			productRefGroup = AE558F652EE1FB5C007CC05E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -143,6 +152,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AE8808CB2F1A21AD00521C31 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AE558F602EE1FB5C007CC05E /* Sources */ = {
@@ -291,7 +321,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.locolin.Logi-Process-Killer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -320,7 +350,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.locolin.Logi-Process-Killer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -350,6 +380,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AE8808C82F1A200600521C31 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Legacy";
+			requirement = {
+				kind = exactVersion;
+				version = 4.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AE8808C92F1A200600521C31 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE8808C82F1A200600521C31 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */;
+			productName = LaunchAtLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AE558F5C2EE1FB5C007CC05E /* Project object */;
 }

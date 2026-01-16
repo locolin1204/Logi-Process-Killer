@@ -8,10 +8,12 @@
 import Foundation
 import SwiftUI
 import UserNotifications
+import LaunchAtLogin
 
 class ApplicationMenu: NSObject {
     
     let menu = NSMenu()
+    private var loginItem: NSMenuItem!
     
     func createMenu() -> NSMenu {
         
@@ -22,6 +24,19 @@ class ApplicationMenu: NSObject {
         )
         killProcessMenuItem.target = self
         menu.addItem(killProcessMenuItem)
+        
+        
+        let launchMenuItem = NSMenuItem(
+            title: "Launch at Login",
+            action: #selector(toggleLaunchAtLogin),
+            keyEquivalent: ""
+        )
+        launchMenuItem.target = self
+        launchMenuItem.state = LaunchAtLogin.isEnabled ? .on : .off
+
+        menu.addItem(launchMenuItem)
+        
+        self.loginItem = launchMenuItem
         
         menu.addItem(NSMenuItem.separator())
         
@@ -108,5 +123,14 @@ class ApplicationMenu: NSObject {
     
     @objc func quit(sender: NSMenuItem) {
         NSApp.terminate(self)
+    }
+    
+    @objc private func toggleLaunchAtLogin(_ sender: NSMenuItem) {
+        LaunchAtLogin.isEnabled.toggle()
+        sender.state = LaunchAtLogin.isEnabled ? .on : .off
+    }
+
+    func menuWillOpen(_ menu: NSMenu) {
+        loginItem.state = LaunchAtLogin.isEnabled ? .on : .off
     }
 }
